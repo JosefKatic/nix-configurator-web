@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatList, MatListItem, MatListModule, MatListSubheaderCssMatStyler } from '@angular/material/list';
 import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { DeviceItemFragment } from '@joka00.dev/libs/data-access';
+import { DeviceItemFragment } from '@joka00/libs/data-access';
 import { Observable } from 'rxjs';
 import { ApolloQueryResult } from '@apollo/client';
 import { ListItemComponent } from '../list-item/list-item.component';

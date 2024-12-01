@@ -1,4 +1,4 @@
-import { ConfigControl } from '@joka00.dev/libs/data-access';
+import { ConfigControl } from '@joka00/libs/data-access';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 export class ConfigGroup {

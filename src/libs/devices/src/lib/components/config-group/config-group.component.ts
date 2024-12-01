@@ -5,7 +5,7 @@ import { MatCheckbox } from '@angular/material/checkbox';
 import { MatOption } from '@angular/material/autocomplete';
 import { MatFormField, MatLabel, MatSelect } from '@angular/material/select';
 import { ControlContainer, FormGroup, FormGroupDirective, ReactiveFormsModule } from '@angular/forms';
-import { ConfigControl, ConfigGroup, ControlType } from '@joka00.dev/libs/data-access';
+import { ConfigControl, ConfigGroup, ControlType } from '@joka00/libs/data-access';
 import { DESCRIPTIONS } from '../../descriptions';
 
 

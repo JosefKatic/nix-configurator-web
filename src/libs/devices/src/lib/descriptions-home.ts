@@ -1,4 +1,4 @@
-import { ControlType } from '@joka00.dev/libs/data-access';
+import { ControlType } from '@joka00/libs/data-access';
 import { last } from 'rxjs';
 
 export const DESCRIPTIONS_HOME = [

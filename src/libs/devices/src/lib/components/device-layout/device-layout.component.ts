@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
 import { MatListItem, MatNavList } from '@angular/material/list';
-import { ListDevicesGQL, ListDevicesQuery } from '@joka00.dev/libs/data-access';
+import { ListDevicesGQL, ListDevicesQuery } from '@joka00/libs/data-access';
 import { Observable } from 'rxjs';
 import { ApolloQueryResult } from '@apollo/client';
 import { MatIcon } from '@angular/material/icon';

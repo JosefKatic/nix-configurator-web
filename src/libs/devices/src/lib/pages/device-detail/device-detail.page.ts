@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { GetDeviceDetailGQL, GetDeviceDetailQuery } from '@joka00.dev/libs/data-access';
+import { GetDeviceDetailGQL, GetDeviceDetailQuery } from '@joka00/libs/data-access';
 import { map, Observable } from 'rxjs';
 import { ApolloQueryResult } from '@apollo/client';
 import { DeviceDetailComponent } from '../../components/device-detail/device-detail.component';

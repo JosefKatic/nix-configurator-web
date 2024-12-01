@@ -12,7 +12,7 @@ import {
   UpdateHomeConfigGQL,
   ConfigType,
   HomeConfigInput,
-} from '@joka00.dev/libs/data-access';
+} from '@joka00/libs/data-access';
 import {
   MatAccordion,
   MatExpansionPanel,

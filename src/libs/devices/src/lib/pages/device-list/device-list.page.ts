@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { ApolloQueryResult } from '@apollo/client';
-import { ListDevicesGQL, ListDevicesQuery } from '@joka00.dev/libs/data-access';
+import { ListDevicesGQL, ListDevicesQuery } from '@joka00/libs/data-access';
 import { DeviceListComponent } from '../../components/device-list/device-list.component';
 
 @Component({

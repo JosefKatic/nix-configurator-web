@@ -1,4 +1,4 @@
-import { ControlType } from '@joka00.dev/libs/data-access';
+import { ControlType } from '@joka00/libs/data-access';
 import { IsLabelVisible } from './components/config-group/config-group.component';
 
 export const timezones = [
