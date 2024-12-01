@@ -1,0 +1,9 @@
+@use '@angular/material' as mat;
+@use '@angular/material-experimental' as matx;
+
+@mixin list-item-theme($theme) {
+  mat-card:hover {
+    background: rgba(mat.get-theme-color($theme, primary-container), 0.1);
+    cursor: pointer;
+  }
+}

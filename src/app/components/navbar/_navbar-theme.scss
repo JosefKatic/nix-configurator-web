@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+@use '@angular/material-experimental' as matx;
+@use '../../../styles/constants';
+
+@mixin theme($theme) {
+  mat-toolbar, mat-toolbar-row {
+    color: mat.get-theme-color($theme, primary);
+    background: mat.get-theme-color($theme, primary-container);
+
+    .item-selected {
+      background: rgba(mat.get-theme-color($theme, primary), 0.1);
+    }
+  }
+}

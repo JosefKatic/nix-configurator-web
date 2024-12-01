@@ -1,0 +1,33 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" opened="true">
+    <mat-nav-list>
+      @if (list$ | async; as list) {
+        @for (device of list.data.devices; track device) {
+          <a
+            mat-list-item
+            [routerLink]="'/devices/' + device.hostname"
+            routerLinkActive="active"
+          >
+            <div class="item">
+              <div>
+                <div matListItemTitle class="item-title">
+                  <span>{{ device.hostname }}</span>
+                </div>
+                <div matListItemLine>{{ device.ip }}</div>
+              </div>
+              <div
+                class="item-status"
+                [ngClass]="device.isOnline ? 'online' : 'offline'"
+              >
+                ●
+              </div>
+            </div>
+          </a>
+        }
+      }
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

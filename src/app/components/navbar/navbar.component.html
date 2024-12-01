@@ -1,0 +1,45 @@
+<mat-toolbar>
+  <mat-toolbar-row class="navbar-row">
+    <a mat-button routerLink="/">
+      <joka00-logo matButtonIcon />
+      Device manager
+    </a>
+    <a mat-button class="navbar-hide-small" routerLink="/devices"
+       routerLinkActive="item-selected">Devices</a>
+    <a mat-button class="navbar-hide-small" routerLink="/flake"
+       routerLinkActive="item-selected">Flake</a>
+    <a mat-button class="navbar-hide-small" routerLink="/docs"
+       routerLinkActive="item-selected">Documentation</a>
+    <span class="flex-spacer"></span>
+    <button mat-button [matMenuTriggerFor]="menu">
+      {{ profile.firstName }} {{ profile.lastName }}
+      <mat-icon iconPositionEnd>
+        arrow_drop_down
+      </mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        Profile
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Log out
+      </button>
+    </mat-menu>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="navbar-row navbar">
+    <a mat-button class="navbar-link" routerLink="/devices"
+       routerLinkActive="item-selected">Devices</a>
+    <a mat-button class="navbar-link" routerLink="/flake"
+       routerLinkActive="item-selected">Flake</a>
+    <a mat-button class="navbar-link" routerLink="/docs"
+       routerLinkActive="item-selected">Documentation</a>
+  </mat-toolbar-row>
+  <mat-toolbar-row class="toolbar-row-mobile">
+    <button mat-button (click)="toggleSidenav.emit()">
+      <mat-icon>menu</mat-icon>
+      Menu
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

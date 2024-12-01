@@ -1,0 +1,25 @@
+<!--<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">-->
+<!--  <mat-tab label="User">-->
+
+<!--  </mat-tab>-->
+<!--  <mat-tab label="System">-->
+
+<!--  </mat-tab>-->
+<!--</mat-tab-group>-->
+
+<div class="device-detail">
+  <nav mat-tab-nav-bar mat-stretch-tabs="false" class="device-detail-viewer-tabbed-content"
+       aria-label="Configuration sections"
+       id="configuration-sections"
+       [tabPanel]="panel">
+    <a mat-tab-link class="docs-component-viewer-section-tab"
+       *ngFor="let section of sections"
+       [routerLink]="section.toLowerCase()"
+       routerLinkActive #rla="routerLinkActive"
+       [active]="rla.isActive">{{section}}</a>
+  </nav>
+
+  <mat-tab-nav-panel #panel class="device-detail-viewer-content">
+    <router-outlet></router-outlet>
+  </mat-tab-nav-panel>
+</div>

@@ -1,0 +1,7 @@
+fragment HomeTerminalConfig on HomeTerminal {
+    shell {
+        fish {
+            enable
+        }
+    }
+}

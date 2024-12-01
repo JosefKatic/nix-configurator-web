@@ -1,0 +1,16 @@
+fragment UtilsConfig on Utils {
+  kdeconnect {
+    enable
+  }
+  virtualisation {
+    docker {
+      enable
+    }
+    podman {
+      enable
+    }
+    libvirtd {
+      enable
+    }
+  }
+}

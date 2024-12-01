@@ -1,0 +1,44 @@
+# fragment HardwareConfig on Hardware {
+#   bluetooth {
+#     enable
+#     enableManager
+#   }
+#   cpu {
+#     amd {
+#       enable
+#     }
+#     intel {
+#       enable
+#     }
+#   }
+#   disks {
+#     hdd {
+#       enable
+#     }
+#     ssd {
+#       enable
+#     }
+#   }
+#   gpu {
+#     amd {
+#       enable
+#     }
+#     intel {
+#       enable
+#     }
+#     nvidia {
+#       enable
+#     }
+#   }
+#   misc {
+#     trezor {
+#       enable
+#     }
+#     xbox {
+#       enable
+#     }
+#     yubikey {
+#       enable
+#     }
+#   }
+# }

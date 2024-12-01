@@ -1,0 +1,12 @@
+fragment HomeServicesConfig on HomeServices {
+  media {
+    playerctl {
+      enable
+    }
+  }
+  system {
+    udiskie {
+      enable
+    }
+  }
+}

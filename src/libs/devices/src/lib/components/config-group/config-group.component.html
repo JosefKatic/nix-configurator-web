@@ -1,0 +1,37 @@
+<ng-container [formGroup]="form">
+  @if (!group.members) {
+    @if (group.controlType == ControlType.checkbox) {
+      <mat-checkbox [formControlName]="group.key!" [value]="group.value"
+        >{{ group.label }}
+      </mat-checkbox>
+    } @else if (
+      group.controlType == ControlType.select ||
+      group.controlType == ControlType['multi-select']
+    ) {
+      <mat-form-field appearance="outline">
+        <mat-label>{{ group.label }}</mat-label>
+        <mat-select
+          [value]="group.value"
+          [formControlName]="group.key!"
+          [multiple]="group.controlType == ControlType['multi-select']"
+        >
+          @for (locale of group.options; track locale) {
+            <mat-option [value]="locale">{{ locale }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    }
+  } @else {
+    {{ group.label! | isLabelVisible }}
+    <ul>
+      @for (child of group.members; track child) {
+        <li>
+          <joka00-config-group
+            [group]="child"
+            [form]="innerForm"
+          ></joka00-config-group>
+        </li>
+      }
+    </ul>
+  }
+</ng-container>

@@ -1,0 +1,77 @@
+fragment HomeDesktopConfig on HomeDesktop {
+  programs {
+    browsers {
+      brave {
+        enable
+      }
+      chromium {
+        enable
+      }
+      firefox {
+        enable
+      }
+    }
+    editors {
+      vscode {
+        enable
+      }
+    }
+    emulators {
+      alacritty {
+        enable
+      }
+      kitty {
+        enable
+      }
+      wezterm {
+        enable
+      }
+    }
+    games {
+      lutris {
+        enable
+      }
+      minecraft {
+        enable
+      }
+    }
+    media {
+      mpv {
+        enable
+      }
+    }
+    productivity {
+      zathura {
+        enable
+      }
+    }
+  }
+  services {
+    kdeconnect {
+      enable
+    }
+    mako {
+      enable
+    }
+    polkit_agent {
+      enable
+    }
+  }
+  wayland {
+    hyprland {
+      enable
+      settings {
+        mod
+      }
+      plugins {
+        hyprsplit {
+          enable
+          numberOfWorkspaces
+        }
+      }
+    }
+    waybar {
+      enable
+    }
+  }
+}

@@ -1,0 +1,10 @@
+mutation UpdateSystemConfig($updateDeviceInput: UpdateSystemConfigInput!) {
+  updateSystemConfig(updateDeviceInput: $updateDeviceInput) {
+    hostname
+  }
+}
+mutation UpdateHomeConfig($updateDeviceInput: UpdateHomeConfigInput!) {
+  updateHomeConfig(updateDeviceInput: $updateDeviceInput) {
+    hostname
+  }
+}

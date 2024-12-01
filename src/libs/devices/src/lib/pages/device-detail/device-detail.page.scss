@@ -1,0 +1,38 @@
+@use '../../../../../../apps/frontend/src/styles/constants';
+
+joka00-device-detail-page {
+  font-weight: 400;
+  width: calc(100% - #{constants.$sidenav-width + 1} - #{constants.$content-padding-sidenav * 2});
+
+  // spacing for the component viewer
+  padding: 20px constants.$content-padding-sidenav;
+
+  // Sidenav is hidden
+  @media (max-width: constants.$small-breakpoint-width) {
+    width: calc(100% - #{constants.$content-padding-sidenav * 2});
+  }
+  @media (max-width: 599px) {
+    width: calc(100% - #{constants.$content-padding-side-xs * 2});
+    padding-left: constants.$content-padding-side-xs;
+    padding-right: constants.$content-padding-side-xs;
+  }
+
+  .device-detail {
+    min-width: 160px;
+    text-transform: uppercase;
+  }
+}
+
+.device-detail-tabbed-content {
+  margin-bottom: 25px;
+}
+
+.device-detail-viewer-content {
+  position: relative;
+  min-height: 500px;
+}
+
+.device-detail-view-text-content {
+  flex-grow: 1;
+  width: 100%;
+}

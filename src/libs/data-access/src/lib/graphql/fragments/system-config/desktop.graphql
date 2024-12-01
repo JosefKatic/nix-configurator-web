@@ -1,0 +1,28 @@
+fragment DesktopConfig on Desktop {
+  gamemode {
+    enable
+  }
+  wayland {
+    desktopManager {
+      gnome {
+        enable
+      }
+      plasma6 {
+        enable
+      }
+    }
+    displayManager {
+      gdm {
+        enable
+      }
+    }
+    windowManager {
+      hyprland {
+        enable
+      }
+      sway {
+        enable
+      }
+    }
+  }
+}

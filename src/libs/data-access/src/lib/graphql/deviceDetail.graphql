@@ -1,0 +1,36 @@
+query GetDeviceDetail($hostname: String!) {
+  device(hostname: $hostname) {
+    hostname
+    systemConfig {
+      # boot {
+        # ...BootConfig
+      # }
+      core {
+        ...CoreConfig
+      }
+      desktop {
+        ...DesktopConfig
+      }
+      # hardware {
+        # ...HardwareConfig
+      # }
+      server {
+        ...ServerConfig
+      }
+      utils {
+        ...UtilsConfig
+      }
+    }
+    homeConfig {
+      desktop {
+        ...HomeDesktopConfig
+      }
+      services {
+        ...HomeServicesConfig
+      }
+      terminal {
+        ...HomeTerminalConfig
+      }
+    }
+  }
+}

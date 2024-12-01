@@ -1,0 +1,9 @@
+@if (list.length > 0) {
+  <div class="device-list">
+    @for (device of list; track device.hostname) {
+      <joka00-list-item [device]="device"></joka00-list-item>
+    }
+  </div>
+} @else {
+  <h1>There were no devices assigned to you, please contact support</h1>
+}

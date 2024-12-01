@@ -1,0 +1,9 @@
+# fragment BootConfig on Boot {
+#   uefi {
+#     enable
+#     secureboot
+#   }
+#   quietboot {
+#     enable
+#   }
+# }

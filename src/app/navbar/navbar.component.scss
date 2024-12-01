@@ -1,0 +1,66 @@
+@use '../../../styles/constants';
+
+.flex-spacer {
+  flex-grow: 1;
+}
+
+.navbar-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 16px;
+
+  > .mat-mdc-button {
+    &:last-child {
+      margin-left: auto;
+    }
+  }
+}
+
+.mat-mdc-icon-button {
+  color: inherit;
+}
+
+joka00-logo {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+}
+
+.navbar {
+  display: none;
+}
+
+.navbar-show-small {
+  display: none;
+}
+
+.navbar-link {
+  text-decoration: inherit;
+  flex: 1;
+}
+
+.toolbar-row-mobile {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 60px;
+
+  @media (max-width: constants.$small-breakpoint-width) {
+    display: flex;
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar-hide-small {
+    display: none;
+  }
+
+  .navbar-show-small {
+    display: block;
+  }
+
+  .navbar {
+    display: flex;
+  }
+}

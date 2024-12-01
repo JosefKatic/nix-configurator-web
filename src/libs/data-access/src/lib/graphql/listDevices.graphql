@@ -1,0 +1,12 @@
+fragment DeviceItem on Device {
+  hostname
+  isOnline
+  ip
+  __typename
+}
+
+query ListDevices {
+  devices {
+    ...DeviceItem
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "realm": "92a4012f-3d57-4fb0-9d39-16d28ec44d01",
+  "auth-server-url": "https://auth.joka00.dev",
+  "ssl-required": "required",
+  "resource": "web-config",
+  "public-client": true,
+  "use-resource-role-mappings": true,
+  "confidential-port": 0
+}

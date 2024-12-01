@@ -1,0 +1,14 @@
+@use '@angular/material' as mat;
+
+@use './app/components/navbar/navbar-theme';
+@use '../../../libs/devices/src/lib/components/list-item/list-item-theme';
+
+@mixin theme($theme) {
+  .wrapper {
+    color: mat.get-theme-color($theme, on-surface);
+    background: mat.get-theme-color($theme, surface);
+  }
+
+  @include navbar-theme.theme($theme);
+  @include list-item-theme.list-item-theme($theme);
+}

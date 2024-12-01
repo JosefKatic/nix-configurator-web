@@ -1,0 +1,33 @@
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+  padding: 0.5rem;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+mat-sidenav-content {
+  margin: 0.5rem 0.5rem 0 0.5rem;
+}
+.active::before {
+  background-color: var(--mdc-list-list-item-hover-state-layer-color);
+  opacity: var(--mdc-list-list-item-hover-state-layer-opacity);
+}
+.mat-mdc-list-item {
+  margin: 0.75rem 0;
+}
+.item {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-between;
+}
+.item-title {
+  font-weight: 700;
+}
+
+.item-status {
+  align-self: center;
+}

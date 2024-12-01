@@ -1,0 +1,49 @@
+fragment CoreConfig on Core {
+  locale {
+    defaultLocale
+    supportedLocales
+    timeZone
+  }
+  network {
+    domain
+    services {
+      enableAvahi
+      enableNetworkManager
+      enableResolved
+    }
+  }
+  disableDefaults
+  securityRules {
+    enable
+  }
+  shells {
+    fish {
+      enable
+    }
+    zsh {
+      enable
+    }
+  }
+  storage {
+    otherDrives {
+      name
+      encrypted {
+        enable
+        path
+      }
+    }
+    systemDrive {
+      name
+      encrypted {
+        enable
+        path
+      }
+    }
+    swapFile {
+      enable
+      path
+      size
+    }
+    enablePersistence
+  }
+}

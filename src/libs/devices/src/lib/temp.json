@@ -1,0 +1,797 @@
+[
+  {
+    "key": "boot",
+    "label": "Boot",
+    "order": 1,
+    "members": [
+      {
+        "key": "quietboot",
+        "label": "Quiet boot",
+        "order": 2,
+        "members": [
+          {
+            "value": false,
+            "key": "enable",
+            "label": "Enables or disables quiet boot mode (enables plymouth)",
+            "required": false,
+            "order": 3,
+            "controlType": "checkbox",
+            "options": []
+          }
+        ]
+      },
+      {
+        "key": "uefi",
+        "label": "UEFI",
+        "order": 4,
+        "members": [
+          {
+            "value": false,
+            "key": "enable",
+            "label": "Enables or disables UEFI boot mode",
+            "required": false,
+            "order": 5,
+            "controlType": "checkbox",
+            "options": []
+          },
+          {
+            "value": false,
+            "key": "secureboot",
+            "label": "Enables or disables secure boot in UEFI mode",
+            "required": false,
+            "order": 6,
+            "controlType": "checkbox",
+            "options": []
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "core",
+    "label": "Core",
+    "order": 7,
+    "members": [
+      {
+        "value": true,
+        "key": "disableDefaults",
+        "label": "FDisables default settings if set to true",
+        "required": false,
+        "order": 8,
+        "controlType": 0,
+        "options": []
+      },
+      {
+        "key": "locale",
+        "label": "Locale",
+        "order": 9,
+        "members": [
+          {
+            "value": "en_US.UTF-8",
+            "key": "defaultLocale",
+            "label": "Sets the default locale for the system",
+            "required": false,
+            "order": 10,
+            "controlType": "select",
+            "options": []
+          },
+          {
+            "value": [
+              "en_US.UTF-8/UTF-8",
+              "cs_CZ.UTF-8/UTF-8"
+            ],
+            "key": "supportedLocales",
+            "label": "List of supported locales",
+            "required": false,
+            "order": 11,
+            "controlType": "multi-select",
+            "options": []
+          },
+          {
+            "value": "Europe/Prague",
+            "key": "timeZone",
+            "label": "Sets the system's time zone",
+            "required": false,
+            "order": 12,
+            "controlType": "select",
+            "options": []
+          }
+        ]
+      },
+      {
+        "key": "network",
+        "label": "Network",
+        "order": 13,
+        "members": [
+          {
+            "value": "clients.joka00.dev",
+            "key": "domain",
+            "label": "Sets the network domain",
+            "required": false,
+            "order": 14,
+            "controlType": "text",
+            "options": []
+          },
+          {
+            "key": "services",
+            "label": "Services",
+            "order": 15,
+            "members": [
+              {
+                "value": false,
+                "key": "enableAvahi",
+                "label": "Enables or disables the Avahi service",
+                "required": false,
+                "order": 16,
+                "controlType": "checkbox",
+                "options": []
+              },
+              {
+                "value": false,
+                "key": "enableNetworkManager",
+                "label": "Enables or disables the NetworkManager service",
+                "required": false,
+                "order": 17,
+                "controlType": "checkbox",
+                "options": []
+              },
+              {
+                "value": false,
+                "key": "enableResolved",
+                "label": "Enables or disables the systemd-resolved service",
+                "required": false,
+                "order": 18,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "securityRules",
+        "label": "Security rules",
+        "order": 19,
+        "members": [
+          {
+            "value": true,
+            "key": "enable",
+            "label": "Enable or disable hardened security rules",
+            "required": false,
+            "order": 20,
+            "controlType": 0,
+            "options": []
+          }
+        ]
+      },
+      {
+        "key": "shells",
+        "label": "Shells",
+        "order": 21,
+        "members": [
+          {
+            "key": "fish",
+            "label": "Fish",
+            "order": 22,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the Fish shell",
+                "required": false,
+                "order": 23,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "zsh",
+            "label": "Zsh",
+            "order": 24,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables the Zsh shell",
+                "required": false,
+                "order": 25,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "storage",
+        "label": "Storage",
+        "order": 26,
+        "members": [
+          {
+            "value": true,
+            "key": "enablePersistence",
+            "label": "Enables or disables persistence",
+            "required": false,
+            "order": 27,
+            "controlType": "checkbox",
+            "options": []
+          },
+          {
+            "key": "swapFile",
+            "label": "Swap file",
+            "order": 28,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the swap file",
+                "required": false,
+                "order": 29,
+                "controlType": "checkbox",
+                "options": []
+              },
+              {
+                "value": "/swap/swapfile",
+                "key": "path",
+                "label": "Path to the swap file",
+                "required": false,
+                "order": 30,
+                "controlType": "text",
+                "options": []
+              },
+              {
+                "value": 8,
+                "key": "size",
+                "label": "Size of the swap file",
+                "required": false,
+                "order": 31,
+                "controlType": "number",
+                "options": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "desktop",
+    "label": "Desktop",
+    "order": 32,
+    "members": [
+      {
+        "key": "gamemode",
+        "label": "Gamemode",
+        "order": 33,
+        "members": [
+          {
+            "value": false,
+            "key": "enable",
+            "label": "Enables or disables the Gamemode",
+            "required": false,
+            "order": 34,
+            "controlType": "checkbox",
+            "options": []
+          }
+        ]
+      },
+      {
+        "key": "wayland",
+        "label": "Wayland",
+        "order": 35,
+        "members": [
+          {
+            "key": "desktopManager",
+            "label": "Desktop managers",
+            "order": 36,
+            "members": [
+              {
+                "key": "gnome",
+                "label": "Gnome",
+                "order": 37,
+                "members": [
+                  {
+                    "value": false,
+                    "key": "enable",
+                    "label": "Enables or disables the Gnome desktop environment",
+                    "required": false,
+                    "order": 38,
+                    "controlType": "checkbox",
+                    "options": []
+                  }
+                ]
+              },
+              {
+                "key": "plasma6",
+                "label": "Plasma/KDE",
+                "order": 39,
+                "members": [
+                  {
+                    "value": false,
+                    "key": "enable",
+                    "label": "Enables or disables the Plasma 6 desktop environment",
+                    "required": false,
+                    "order": 40,
+                    "controlType": "checkbox",
+                    "options": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "displayManager",
+            "label": "Display managers",
+            "order": 41,
+            "members": [
+              {
+                "key": "gdm",
+                "label": "GDM",
+                "order": 42,
+                "members": [
+                  {
+                    "value": false,
+                    "key": "enable",
+                    "label": "Enables or disables the GDM display manager",
+                    "required": false,
+                    "order": 43,
+                    "controlType": "checkbox",
+                    "options": []
+                  }
+                ]
+              },
+              {
+                "key": "regreet",
+                "label": "ReGreet",
+                "order": 44,
+                "members": [
+                  {
+                    "value": false,
+                    "key": "enable",
+                    "label": "Enables or disables the ReGreet display manager",
+                    "required": false,
+                    "order": 45,
+                    "controlType": "checkbox",
+                    "options": []
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "key": "windowManager",
+            "label": "Window managers",
+            "order": 46,
+            "members": [
+              {
+                "key": "hyprland",
+                "label": "Hyprland",
+                "order": 47,
+                "members": [
+                  {
+                    "value": false,
+                    "key": "enable",
+                    "label": "Enables or disables the Hyprland window manager",
+                    "required": false,
+                    "order": 48,
+                    "controlType": "checkbox",
+                    "options": []
+                  }
+                ]
+              },
+              {
+                "key": "sway",
+                "label": "Sway",
+                "order": 49,
+                "members": [
+                  {
+                    "value": false,
+                    "key": "enable",
+                    "label": "Enables or disables the Sway window manager",
+                    "required": false,
+                    "order": 50,
+                    "controlType": "checkbox",
+                    "options": []
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "hardware",
+    "label": "Hardware",
+    "order": 51,
+    "members": [
+      {
+        "key": "cpu",
+        "label": "CPU",
+        "order": 52,
+        "members": [
+          {
+            "key": "intel",
+            "label": "Intel",
+            "order": 53,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables Intel CPU support",
+                "required": false,
+                "order": 54,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "amd",
+            "label": "AMD",
+            "order": 55,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables AMD CPU support",
+                "required": false,
+                "order": 56,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "gpu",
+        "label": "GPU",
+        "order": 57,
+        "members": [
+          {
+            "key": "intel",
+            "label": "Intel",
+            "order": 58,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables Intel GPU support",
+                "required": false,
+                "order": 59,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "amd",
+            "label": "AMD",
+            "order": 60,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables AMD GPU support",
+                "required": false,
+                "order": 61,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "nvidia",
+            "label": "Nvidia",
+            "order": 62,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables Nvidia GPU support",
+                "required": false,
+                "order": 63,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "key": "misc",
+        "label": "Miscellaneous",
+        "order": 64,
+        "members": [
+          {
+            "key": "trezor",
+            "label": "Trezor bridge",
+            "order": 65,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables the Trezor bridge",
+                "required": false,
+                "order": 66,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "xbox",
+            "label": "Xbox",
+            "order": 67,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables Xbox controller support",
+                "required": false,
+                "order": 68,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "yubikey",
+            "label": "Yubikey",
+            "order": 69,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables Yubikey support",
+                "required": false,
+                "order": 70,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "server",
+    "label": "Server",
+    "order": 71,
+    "members": [
+      {
+        "key": "services",
+        "label": "Server services",
+        "order": 72,
+        "members": [
+          {
+            "key": "acme",
+            "label": "ACME",
+            "order": 73,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the ACME service",
+                "required": false,
+                "order": 74,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "fail2ban",
+            "label": "Fail2Ban",
+            "order": 75,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the Fail2ban service",
+                "required": false,
+                "order": 76,
+                "controlType": 0,
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "freeipaServer",
+            "label": "Freeipa server",
+            "order": 77,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the FreeIPA server service",
+                "required": false,
+                "order": 78,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "keycloak",
+            "label": "Keycloak",
+            "order": 79,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the Keycloak service",
+                "required": false,
+                "order": 80,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "nginx",
+            "label": "Nginx",
+            "order": 81,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the Nginx service",
+                "required": false,
+                "order": 82,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "mysql",
+            "label": "MySQL",
+            "order": 83,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables the MySQL database",
+                "required": false,
+                "order": 84,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "postgresql",
+            "label": "PostgreSQL",
+            "order": 85,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the PostgreSQL database",
+                "required": false,
+                "order": 86,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "teamspeak",
+            "label": "Teamspeak",
+            "order": 87,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the TeamSpeak server",
+                "required": false,
+                "order": 88,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "key": "utils",
+    "label": "Utilities",
+    "order": 89,
+    "members": [
+      {
+        "key": "autoUpgrade",
+        "label": "Auto upgrade",
+        "order": 90,
+        "members": [
+          {
+            "value": false,
+            "key": "enable",
+            "label": "Enables or disables automatic upgrades",
+            "required": false,
+            "order": 91,
+            "controlType": "checkbox",
+            "options": []
+          }
+        ]
+      },
+      {
+        "key": "kdeconnect",
+        "label": "KDE Connect",
+        "order": 92,
+        "members": [
+          {
+            "value": false,
+            "key": "enable",
+            "label": "Enables or disables the KDE Connect",
+            "required": false,
+            "order": 93,
+            "controlType": "checkbox",
+            "options": []
+          }
+        ]
+      },
+      {
+        "key": "virtualisation",
+        "label": "Virtualisation",
+        "order": 94,
+        "members": [
+          {
+            "key": "docker",
+            "label": "Docker",
+            "order": 95,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables the Docker",
+                "required": false,
+                "order": 96,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "podman",
+            "label": "Podman",
+            "order": 97,
+            "members": [
+              {
+                "value": true,
+                "key": "enable",
+                "label": "Enables or disables the Podman",
+                "required": false,
+                "order": 98,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          },
+          {
+            "key": "libvirtd",
+            "label": "Libvirtd",
+            "order": 99,
+            "members": [
+              {
+                "value": false,
+                "key": "enable",
+                "label": "Enables or disables the libvirtd",
+                "required": false,
+                "order": 100,
+                "controlType": "checkbox",
+                "options": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

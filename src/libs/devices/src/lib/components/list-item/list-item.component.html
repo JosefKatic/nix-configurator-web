@@ -1,0 +1,19 @@
+<mat-card
+  appearance="outlined"
+  class="device-list-item"
+  [routerLink]="'/devices/' + device.hostname"
+>
+  <mat-card-header>
+    <mat-card-title>
+      <mat-icon>laptop</mat-icon>
+      {{ device.hostname }}
+    </mat-card-title>
+    <mat-card-subtitle>{{ device.ip }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      <span [ngClass]="device.isOnline ? 'online' : 'offline'">●</span>
+      {{ device.isOnline ? 'Online' : 'Offline' }}
+    </p>
+  </mat-card-content>
+</mat-card>

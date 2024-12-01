@@ -1,0 +1,85 @@
+fragment ServerConfig on Server {
+  auth {
+    freeipa {
+      enable
+      __typename
+    }
+    keycloak {
+      enable
+      __typename
+    }
+  }
+  cache {
+    enable
+    __typename
+  }
+  databases {
+    mysql {
+      enable
+      __typename
+    }
+    postgresql {
+      enable
+      __typename
+    }
+  }
+  git {
+    daemon {
+      enable
+      __typename
+    }
+    cgit {
+      enable
+      __typename
+    }
+  }
+  homelab {
+    blocky {
+      enable
+    }
+    homeassistant {
+      enable
+    }
+    mosquitto {
+      enable
+    }
+    zigbee2mqtt {
+      enable
+    }
+  }
+  hosting {
+    website {
+      enable
+    }
+  }
+  hydra {
+    enable
+    __typename
+  }
+  minecraft {
+    enable
+    __typename
+  }
+  services {
+    fail2ban {
+      enable
+      __typename
+    }
+    headscale {
+      enable
+      __typename
+    }
+    web {
+      acme {
+        enable
+      }
+      nginx {
+        enable
+      }
+    }
+  }
+  teamspeak {
+    enable
+    __typename
+  }
+}

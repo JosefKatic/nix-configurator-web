@@ -1,0 +1,19 @@
+@if (deviceQueryResult$ | async; as device) {
+  <form [formGroup]="form" (ngSubmit)="updateConfig()">
+    <mat-accordion>
+      @for (item of device; track item) {
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ item.label }}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <section>
+            <joka00-config-group [group]="item" [form]="form"></joka00-config-group>
+          </section>
+        </mat-expansion-panel>
+      }
+    </mat-accordion>
+    <button mat-button type="submit">Submit & deploy</button>
+  </form>
+}
