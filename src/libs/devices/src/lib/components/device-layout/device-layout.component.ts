@@ -1,7 +1,11 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { MatSidenav, MatSidenavContainer, MatSidenavContent } from '@angular/material/sidenav';
+import {
+  MatSidenav,
+  MatSidenavContainer,
+  MatSidenavContent,
+} from '@angular/material/sidenav';
 import { MatListItem, MatNavList } from '@angular/material/list';
 import { ListDevicesGQL, ListDevicesQuery } from '@joka00/libs/data-access';
 import { Observable } from 'rxjs';
@@ -11,9 +15,19 @@ import { MatIcon } from '@angular/material/icon';
 @Component({
   selector: 'joka00-device-layout',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, MatSidenavContent, MatNavList, MatSidenav, MatListItem, RouterLinkActive, MatSidenavContainer, MatIcon],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    RouterLink,
+    MatSidenavContent,
+    MatNavList,
+    MatSidenav,
+    MatListItem,
+    RouterLinkActive,
+    MatSidenavContainer,
+  ],
   templateUrl: './device-layout.component.html',
-  styleUrl: './device-layout.component.scss'
+  styleUrl: './device-layout.component.scss',
 })
 export class DeviceLayoutComponent {
   get list$(): Observable<ApolloQueryResult<ListDevicesQuery>> {

@@ -1,7 +1,7 @@
 @use '@angular/material' as mat;
 
 @use './app/components/navbar/navbar-theme';
-@use '../../../libs/devices/src/lib/components/list-item/list-item-theme';
+@use './libs/devices/src/lib/components/list-item/list-item-theme';
 
 @mixin theme($theme) {
   .wrapper {

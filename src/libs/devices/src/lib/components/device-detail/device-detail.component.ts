@@ -19,10 +19,8 @@ import {
   MatExpansionPanelHeader,
   MatExpansionPanelTitle,
 } from '@angular/material/expansion';
-import { MatCheckbox } from '@angular/material/checkbox';
 import { DESCRIPTIONS } from '../../descriptions';
 import { DESCRIPTIONS_HOME } from '../../descriptions-home';
-import { MatOption, MatSelect } from '@angular/material/select';
 import {
   FormBuilder,
   FormGroup,
@@ -41,10 +39,7 @@ import { MatButton } from '@angular/material/button';
     MatExpansionPanel,
     MatExpansionPanelHeader,
     MatExpansionPanelTitle,
-    MatCheckbox,
     MatAccordion,
-    MatSelect,
-    MatOption,
     FormsModule,
     ReactiveFormsModule,
     ConfigGroupComponent,

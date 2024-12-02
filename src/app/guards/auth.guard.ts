@@ -4,7 +4,7 @@ import { inject } from '@angular/core';
 // Services
 import { KeycloakService } from 'keycloak-angular';
 
-export const authGuard: CanMatchFn = async (route, segments): Promise<boolean | UrlTree> => {
+export const authGuard: CanMatchFn = async (route): Promise<boolean | UrlTree> => {
   const router = inject(Router);
 
   const keycloakService = inject(KeycloakService);

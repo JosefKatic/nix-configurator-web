@@ -1,5 +1,4 @@
 @use "@angular/material" as mat;
-@use "@angular/material-experimental" as matx;
 @use "./app-theme";
 
 $theme: mat.define-theme(

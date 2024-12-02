@@ -1,6 +1,5 @@
 @use '@angular/material' as mat;
-@use '@angular/material-experimental' as matx;
-@use '../../../styles/constants';
+@use '../styles/constants';
 
 @mixin theme($theme) {
   mat-toolbar, mat-toolbar-row {
