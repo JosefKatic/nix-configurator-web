@@ -16,7 +16,7 @@
 
     installPhase = ''
       mkdir -p $out
-      cp -r dist/ $out/
+      cp -r dist/${config.name}/browser $out/
     '';
   };
   deps = {nixpkgs, ...}: {
@@ -25,6 +25,7 @@
       fetchFromGitHub
       stdenv
       nodejs_22
+      coreutils
       ;
   };
 
@@ -33,9 +34,9 @@
   };
   nodejs-granular-v3 = {
     runBuild = true;
-    buildScript = "npm run build";
+    buildScript = "NG_FORCE_TTY=false npm run build";
   };
 
-  name = "web-config-api";
+  name = "nix-configurator-web";
   version = "0.0.1";
 }
