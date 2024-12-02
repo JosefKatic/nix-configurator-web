@@ -26,7 +26,7 @@
         system,
         ...
       }: let
-        configurator-web = dream2nix.lib.evalModules {
+        nix-configurator-web = dream2nix.lib.evalModules {
           packageSets.nixpkgs = pkgs;
           modules = [
             # Import our actual package definiton as a dream2nix module from ./default.nix
@@ -47,8 +47,8 @@
         };
 
         packages = {
-          inherit configurator-web;
-          default = configurator-web;
+          inherit nix-configurator-web;
+          default = nix-configurator-web;
         };
       };
     };
