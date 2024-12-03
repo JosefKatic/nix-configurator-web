@@ -11,11 +11,10 @@
         git
         python3
         nodejs_22
-        # nodePackages."@angular/cli"
       ];
-      # shellHook = ''
-      # ${pkgs.nodePackages."@angular/cli"}/bin/ng config -g cli.packageManager npm}
-      # '';
+      shellHook = ''
+        ${config.pre-commit.installationScript}
+      '';
     };
     formatter = pkgs.alejandra;
   };

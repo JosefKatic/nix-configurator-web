@@ -7,6 +7,10 @@
     dream2nix.url = "github:nix-community/dream2nix";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.follows = "dream2nix/nixpkgs";
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "dream2nix/nixpkgs";
+    };
   };
 
   outputs = {
@@ -51,5 +55,9 @@
           default = nix-configurator-web;
         };
       };
+      imports = [
+        ./pre-commit-hooks.nix
+        ./shell.nix
+      ];
     };
 }
