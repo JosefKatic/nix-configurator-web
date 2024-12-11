@@ -12,9 +12,9 @@
         python3
         nodejs_22
       ];
-      shellHook = ''
-        ${config.pre-commit.installationScript}
-      '';
+      # shellHook = ''
+      #   ${config.pre-commit.installationScript}
+      # '';
     };
     formatter = pkgs.alejandra;
   };
