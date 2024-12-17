@@ -16,7 +16,7 @@
 
     installPhase = ''
       mkdir -p $out
-      cp -r dist/${config.name}/browser $out/
+      cp -r dist/${config.name}/browser/* $out/
     '';
   };
   deps = {nixpkgs, ...}: {
