@@ -12,7 +12,6 @@ import {
   withInterceptorsFromDi,
 } from '@angular/common/http';
 import { provideApollo } from 'apollo-angular';
-import { HttpLink } from 'apollo-angular/http';
 import { appRoutes } from './app.routes';
 import { initializeApollo } from './graphql.provider';
 import { initializeKeycloak } from './keycloak.provider';
@@ -21,12 +20,12 @@ export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(KeycloakAngularModule),
     provideAnimationsAsync(),
-    provideAppInitializer(initializeKeycloak(inject(KeycloakService))),
+    provideAppInitializer(initializeKeycloak()),
     provideRouter(
       appRoutes,
       withRouterConfig({ paramsInheritanceStrategy: 'always' })
     ),
     provideHttpClient(withInterceptorsFromDi()),
-    provideApollo(initializeApollo(inject(HttpLink))),
+    provideApollo(initializeApollo()),
   ],
 };

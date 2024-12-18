@@ -1,9 +1,11 @@
+import { inject } from '@angular/core';
 import { environment } from '@joka00/environment';
 import { KeycloakService } from 'keycloak-angular';
 
-export const initializeKeycloak = (keycloak: KeycloakService) => {
-  return () =>
-    keycloak.init({
+export const initializeKeycloak = () => {
+  return () => {
+    const keycloak = inject(KeycloakService);
+    return keycloak.init({
       config: {
         url: 'https://auth.joka00.dev',
         realm: '21bb13ca-8130-423c-ac0f-85de48db99bb',
@@ -23,4 +25,5 @@ export const initializeKeycloak = (keycloak: KeycloakService) => {
         );
       },
     });
+  };
 };
