@@ -19,7 +19,6 @@
     "module": "ES2022",
     "baseUrl": ".",
     "paths": {
-      "@joka00/environment": ["src/environments/environment.development.ts"],
       "@joka00/libs/data-access": ["src/libs/data-access/src/index.ts"],
       "@joka00/libs/devices": ["src/libs/devices/src/index.ts"]
     }

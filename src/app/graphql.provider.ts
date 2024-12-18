@@ -2,7 +2,7 @@ import { HttpLink } from 'apollo-angular/http';
 import { InMemoryCache } from '@apollo/client/core';
 import { createPersistedQueryLink } from 'apollo-angular/persisted-queries';
 import { sha256 } from 'crypto-hash';
-import { environment } from '@joka00/environment';
+import { environment } from '../environments/environment.development';
 import { inject } from '@angular/core';
 
 export const initializeApollo = () => {

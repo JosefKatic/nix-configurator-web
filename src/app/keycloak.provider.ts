@@ -1,5 +1,5 @@
 import { inject } from '@angular/core';
-import { environment } from '@joka00/environment';
+import { environment } from '../environments/environment.development';
 import { KeycloakService } from 'keycloak-angular';
 
 export const initializeKeycloak = () => {
