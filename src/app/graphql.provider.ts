@@ -9,9 +9,7 @@ export const initializeApollo = () => {
   return () => {
     const httpLink = inject(HttpLink);
     return {
-      link: createPersistedQueryLink({ sha256 }).concat(
-        httpLink.create({ uri: environment.API_URI })
-      ),
+      link: httpLink.create({ uri: environment.API_URI }),
       cache: new InMemoryCache(),
     };
   };
