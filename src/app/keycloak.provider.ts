@@ -7,7 +7,7 @@ export const initializeKeycloak = () => {
     const keycloak = inject(KeycloakService);
     return keycloak.init({
       config: {
-        url: 'https://auth.joka00.dev',
+        url: 'https://sso.joka00.dev',
         realm: '21bb13ca-8130-423c-ac0f-85de48db99bb',
         clientId: 'web-config',
       },
