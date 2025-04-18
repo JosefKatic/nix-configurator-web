@@ -1,3 +1,3 @@
 export const environment = {
-  API_URI: 'https://config.joka00.dev/api',
+  API_URI: 'https://config.internal.joka00.dev/api',
 };
