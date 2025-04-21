@@ -121,6 +121,45 @@ export const DESCRIPTIONS_HOME = [
             label: 'Productivity tools',
             children: [
               {
+                key: 'proton',
+                label: 'Group of Proton products',
+                children: [
+                  {
+                    key: 'mail',
+                    label: 'Proton Mail',
+                    children: [
+                      {
+                        key: 'enable',
+                        label: 'Enable Proton Mail',
+                        controlType: ControlType.checkbox,
+                      },
+                    ]
+                  },
+                  {
+                    key: 'pass',
+                    label: 'Proton Pass',
+                    children: [
+                      {
+                        key: 'enable',
+                        label: 'Enable Proton Pass',
+                        controlType: ControlType.checkbox,
+                      },
+                    ]
+                  },
+                  {
+                    key: 'vpn',
+                    label: 'Proton VPN',
+                    children: [
+                      {
+                        key: 'enable',
+                        label: 'Enable Proton VPN',
+                        controlType: ControlType.checkbox,
+                      },
+                    ]
+                  },
+                ]
+              }
+              {
                 key: 'zathura',
                 label: 'Zathura PDF reader',
                 children: [

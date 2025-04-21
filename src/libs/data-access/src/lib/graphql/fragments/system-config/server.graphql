@@ -33,20 +33,6 @@ fragment ServerConfig on Server {
       __typename
     }
   }
-  homelab {
-    blocky {
-      enable
-    }
-    homeassistant {
-      enable
-    }
-    mosquitto {
-      enable
-    }
-    zigbee2mqtt {
-      enable
-    }
-  }
   hosting {
     website {
       enable
@@ -57,6 +43,10 @@ fragment ServerConfig on Server {
     __typename
   }
   minecraft {
+    enable
+    __typename
+  }
+  nixConfigurator {
     enable
     __typename
   }

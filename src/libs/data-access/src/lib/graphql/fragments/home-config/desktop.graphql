@@ -41,6 +41,20 @@ fragment HomeDesktopConfig on HomeDesktop {
       }
     }
     productivity {
+      proton {
+        mail {
+          enable
+          __typename
+        }
+        pass {
+          enable
+          __typename
+        }
+        vpn {
+          enable
+          __typename
+        }
+      }
       zathura {
         enable
       }

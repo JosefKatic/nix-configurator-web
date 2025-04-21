@@ -37,15 +37,6 @@ export type AuthInput = {
   keycloak?: InputMaybe<KeycloakInput>;
 };
 
-export type Blocky = {
-  __typename?: 'Blocky';
-  enable: Scalars['Boolean']['output'];
-};
-
-export type BlockyInput = {
-  enable?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
 export type CGit = {
   __typename?: 'CGit';
   enable: Scalars['Boolean']['output'];
@@ -77,7 +68,6 @@ export type Core = {
   network: Network;
   securityRules: SecurityRules;
   shells: Shells;
-  storage: Storage;
 };
 
 export type CoreInput = {
@@ -87,7 +77,6 @@ export type CoreInput = {
   network?: InputMaybe<NetworkInput>;
   securityRules?: InputMaybe<SecurityRulesInput>;
   shells?: InputMaybe<ShellsInput>;
-  storage?: InputMaybe<StorageInput>;
 };
 
 export type Databases = {
@@ -153,30 +142,6 @@ export type Docker = {
 
 export type DockerInput = {
   enable?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type Drive = {
-  __typename?: 'Drive';
-  encrypted: Encrypted;
-  name: Scalars['String']['output'];
-  path: Scalars['String']['output'];
-};
-
-export type DriveInput = {
-  encrypted?: InputMaybe<EncryptedInput>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  path?: InputMaybe<Scalars['String']['input']>;
-};
-
-export type Encrypted = {
-  __typename?: 'Encrypted';
-  enable: Scalars['Boolean']['output'];
-  path: Scalars['String']['output'];
-};
-
-export type EncryptedInput = {
-  enable?: InputMaybe<Scalars['Boolean']['input']>;
-  path?: InputMaybe<Scalars['String']['input']>;
 };
 
 export type Fail2ban = {
@@ -476,10 +441,12 @@ export type HomePlayerctl = {
 
 export type HomeProductivity = {
   __typename?: 'HomeProductivity';
+  proton: HomeProton;
   zathura: HomeZathura;
 };
 
 export type HomeProductivityInput = {
+  proton?: InputMaybe<HomeProtonInput>;
   zathura?: InputMaybe<HomeZathuraInput>;
 };
 
@@ -500,6 +467,46 @@ export type HomeProgramsInput = {
   games?: InputMaybe<HomeGamesInput>;
   media?: InputMaybe<HomeMediaInput>;
   productivity?: InputMaybe<HomeProductivityInput>;
+};
+
+export type HomeProton = {
+  __typename?: 'HomeProton';
+  mail?: Maybe<HomeProtonMail>;
+  pass?: Maybe<HomeProtonPass>;
+  vpn?: Maybe<HomeProtonVpn>;
+};
+
+export type HomeProtonInput = {
+  mail?: InputMaybe<HomeProtonMailInput>;
+  pass?: InputMaybe<HomeProtonPassInput>;
+  vpn?: InputMaybe<HomeProtonVpnInput>;
+};
+
+export type HomeProtonMail = {
+  __typename?: 'HomeProtonMail';
+  enable: Scalars['Boolean']['output'];
+};
+
+export type HomeProtonMailInput = {
+  enable?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type HomeProtonPass = {
+  __typename?: 'HomeProtonPass';
+  enable: Scalars['Boolean']['output'];
+};
+
+export type HomeProtonPassInput = {
+  enable?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type HomeProtonVpn = {
+  __typename?: 'HomeProtonVPN';
+  enable: Scalars['Boolean']['output'];
+};
+
+export type HomeProtonVpnInput = {
+  enable?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type HomeServices = {
@@ -587,32 +594,6 @@ export type HomeZathuraInput = {
   enable?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type Homeassistant = {
-  __typename?: 'Homeassistant';
-  enable: Scalars['Boolean']['output'];
-};
-
-export type HomeassistantInput = {
-  enable?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-export type Homelab = {
-  __typename?: 'Homelab';
-  blocky: Blocky;
-  enable: Scalars['Boolean']['output'];
-  homeassistant: Homeassistant;
-  mosquitto: Mosquitto;
-  zigbee2mqtt: Zigbee2Mqtt;
-};
-
-export type HomelabInput = {
-  blocky?: InputMaybe<BlockyInput>;
-  enable?: InputMaybe<Scalars['Boolean']['input']>;
-  homeassistant?: InputMaybe<HomeassistantInput>;
-  mosquitto?: InputMaybe<MosquittoInput>;
-  zigbee2mqtt?: InputMaybe<Zigbee2MqttInput>;
-};
-
 export type Hosting = {
   __typename?: 'Hosting';
   website: Website;
@@ -689,15 +670,6 @@ export type MinecraftInput = {
   enable?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-export type Mosquitto = {
-  __typename?: 'Mosquitto';
-  enable: Scalars['Boolean']['output'];
-};
-
-export type MosquittoInput = {
-  enable?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
 export type Mutation = {
   __typename?: 'Mutation';
   updateHomeConfig: Device;
@@ -756,6 +728,15 @@ export type NginxInput = {
   enable?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type NixConfigurator = {
+  __typename?: 'NixConfigurator';
+  enable: Scalars['Boolean']['output'];
+};
+
+export type NixConfiguratorInput = {
+  enable?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type Plasma6 = {
   __typename?: 'Plasma6';
   enable: Scalars['Boolean']['output'];
@@ -787,7 +768,6 @@ export type Query = {
   __typename?: 'Query';
   device: DeviceConfig;
   devices: Array<Device>;
-  getHello: Scalars['String']['output'];
 };
 
 
@@ -810,10 +790,10 @@ export type Server = {
   cache: Cache;
   databases: Databases;
   git: GitServer;
-  homelab: Homelab;
   hosting: Hosting;
   hydra: Hydra;
   minecraft: Minecraft;
+  nixConfigurator: NixConfigurator;
   services: Services;
   teamspeak: Teamspeak;
 };
@@ -823,10 +803,10 @@ export type ServerInput = {
   cache?: InputMaybe<CacheInput>;
   databases?: InputMaybe<DatabasesInput>;
   git?: InputMaybe<GitServerInput>;
-  homelab?: InputMaybe<HomelabInput>;
   hosting?: InputMaybe<HostingInput>;
   hydra?: InputMaybe<HydraInput>;
   minecraft?: InputMaybe<MinecraftInput>;
+  nixConfigurator?: InputMaybe<NixConfiguratorInput>;
   services?: InputMaybe<ServicesInput>;
   teamspeak?: InputMaybe<TeamspeakInput>;
 };
@@ -853,36 +833,6 @@ export type Shells = {
 export type ShellsInput = {
   fish?: InputMaybe<FishInput>;
   zsh?: InputMaybe<ZshInput>;
-};
-
-export type Storage = {
-  __typename?: 'Storage';
-  enablePersistence: Scalars['Boolean']['output'];
-  otherDrives: Array<Drive>;
-  swapFile: SwapFile;
-  systemDrive: Drive;
-};
-
-export type StorageInput = {
-  enablePersistence?: InputMaybe<Scalars['Boolean']['input']>;
-  otherDrives?: InputMaybe<Array<DriveInput>>;
-  swapFile?: InputMaybe<SwapFileInput>;
-  systemDrive?: InputMaybe<DriveInput>;
-};
-
-export type SwapFile = {
-  __typename?: 'SwapFile';
-  enable: Scalars['Boolean']['output'];
-  path: Scalars['String']['output'];
-  /** Size in GBs */
-  size: Scalars['Int']['output'];
-};
-
-export type SwapFileInput = {
-  enable?: InputMaybe<Scalars['Boolean']['input']>;
-  path?: InputMaybe<Scalars['String']['input']>;
-  /** Size in GBs */
-  size?: InputMaybe<Scalars['Int']['input']>;
 };
 
 export type Sway = {
@@ -1001,15 +951,6 @@ export type WindowManagerInput = {
   sway?: InputMaybe<SwayInput>;
 };
 
-export type Zigbee2Mqtt = {
-  __typename?: 'Zigbee2Mqtt';
-  enable: Scalars['Boolean']['output'];
-};
-
-export type Zigbee2MqttInput = {
-  enable?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
 export type Zsh = {
   __typename?: 'Zsh';
   enable: Scalars['Boolean']['output'];
@@ -1024,19 +965,19 @@ export type GetDeviceDetailQueryVariables = Exact<{
 }>;
 
 
-export type GetDeviceDetailQuery = { __typename?: 'Query', device: { __typename?: 'DeviceConfig', hostname: string, systemConfig?: { __typename?: 'SystemConfig', core: { __typename?: 'Core', disableDefaults: boolean, locale: { __typename?: 'Locale', defaultLocale: string, supportedLocales: Array<string>, timeZone: string }, network: { __typename?: 'Network', domain: string, services: { __typename?: 'NetworkServices', enableAvahi: boolean, enableNetworkManager: boolean, enableResolved: boolean } }, securityRules: { __typename?: 'SecurityRules', enable: boolean }, shells: { __typename?: 'Shells', fish: { __typename?: 'Fish', enable: boolean }, zsh: { __typename?: 'Zsh', enable: boolean } }, storage: { __typename?: 'Storage', enablePersistence: boolean, otherDrives: Array<{ __typename?: 'Drive', name: string, encrypted: { __typename?: 'Encrypted', enable: boolean, path: string } }>, systemDrive: { __typename?: 'Drive', name: string, encrypted: { __typename?: 'Encrypted', enable: boolean, path: string } }, swapFile: { __typename?: 'SwapFile', enable: boolean, path: string, size: number } } }, desktop: { __typename?: 'Desktop', gamemode: { __typename?: 'Gamemode', enable: boolean }, wayland: { __typename?: 'Wayland', desktopManager: { __typename?: 'DesktopManager', gnome: { __typename?: 'Gnome', enable: boolean }, plasma6: { __typename?: 'Plasma6', enable: boolean } }, displayManager: { __typename?: 'DisplayManager', gdm: { __typename?: 'GDM', enable: boolean } }, windowManager: { __typename?: 'WindowManager', hyprland: { __typename?: 'Hyprland', enable: boolean }, sway: { __typename?: 'Sway', enable: boolean } } } }, server: { __typename?: 'Server', auth: { __typename?: 'Auth', freeipa: { __typename: 'FreeIPA', enable: boolean }, keycloak: { __typename: 'Keycloak', enable: boolean } }, cache: { __typename: 'Cache', enable: boolean }, databases: { __typename?: 'Databases', mysql: { __typename: 'Mysql', enable: boolean }, postgresql: { __typename: 'Postgresql', enable: boolean } }, git: { __typename?: 'GitServer', daemon: { __typename: 'GitDaemon', enable: boolean }, cgit: { __typename: 'CGit', enable: boolean } }, homelab: { __typename?: 'Homelab', blocky: { __typename?: 'Blocky', enable: boolean }, homeassistant: { __typename?: 'Homeassistant', enable: boolean }, mosquitto: { __typename?: 'Mosquitto', enable: boolean }, zigbee2mqtt: { __typename?: 'Zigbee2Mqtt', enable: boolean } }, hosting: { __typename?: 'Hosting', website: { __typename?: 'Website', enable: boolean } }, hydra: { __typename: 'Hydra', enable: boolean }, minecraft: { __typename: 'Minecraft', enable: boolean }, services: { __typename?: 'Services', fail2ban: { __typename: 'Fail2ban', enable: boolean }, headscale: { __typename: 'Headscale', enable: boolean }, web: { __typename?: 'Web', acme: { __typename?: 'Acme', enable: boolean }, nginx: { __typename?: 'Nginx', enable: boolean } } }, teamspeak: { __typename: 'Teamspeak', enable: boolean } }, utils: { __typename?: 'Utils', kdeconnect: { __typename?: 'KdeConnect', enable: boolean }, virtualisation: { __typename?: 'Virtualisation', docker: { __typename?: 'Docker', enable: boolean }, podman: { __typename?: 'Podman', enable: boolean }, libvirtd: { __typename?: 'Libvirtd', enable: boolean } } } } | null, homeConfig?: { __typename?: 'HomeConfig', desktop?: { __typename?: 'HomeDesktop', programs: { __typename?: 'HomePrograms', browsers?: { __typename?: 'HomeBrowsers', brave: { __typename?: 'HomeBrave', enable: boolean }, chromium: { __typename?: 'HomeChromium', enable: boolean }, firefox: { __typename?: 'HomeFirefox', enable: boolean } } | null, editors?: { __typename?: 'HomeEditors', vscode: { __typename?: 'HomeVSCode', enable: boolean } } | null, emulators?: { __typename?: 'HomeEmulators', alacritty?: { __typename?: 'HomeAlacritty', enable: boolean } | null, kitty?: { __typename?: 'HomeKitty', enable: boolean } | null, wezterm?: { __typename?: 'HomeWezterm', enable: boolean } | null } | null, games?: { __typename?: 'HomeGames', lutris: { __typename?: 'HomeLutris', enable: boolean }, minecraft: { __typename?: 'HomeMinecraft', enable: boolean } } | null, media?: { __typename?: 'HomeMedia', mpv: { __typename?: 'HomeMPV', enable: boolean } } | null, productivity?: { __typename?: 'HomeProductivity', zathura: { __typename?: 'HomeZathura', enable: boolean } } | null }, services: { __typename?: 'HomeDesktopServices', kdeconnect: { __typename?: 'HomeKdeConnect', enable: boolean }, mako: { __typename?: 'HomeMako', enable: boolean }, polkit_agent: { __typename?: 'HomeKdeConnect', enable: boolean } }, wayland?: { __typename?: 'HomeWayland', hyprland: { __typename?: 'HomeHyprland', enable: boolean, settings: { __typename?: 'HomeHyprlandSettings', mod: string }, plugins: { __typename?: 'HomeHyprlandPlugins', hyprsplit: { __typename?: 'HomeHyprSplit', enable: boolean, numberOfWorkspaces: number } } }, waybar: { __typename?: 'HomeWaybar', enable: boolean } } | null } | null, services?: { __typename?: 'HomeServices', media: { __typename?: 'HomeMediaServices', playerctl: { __typename?: 'HomePlayerctl', enable: boolean } }, system: { __typename?: 'HomeSystemServices', udiskie: { __typename?: 'HomeUdiskie', enable: boolean } } } | null, terminal?: { __typename?: 'HomeTerminal', shell?: { __typename?: 'HomeShell', fish: { __typename?: 'HomeFish', enable: boolean } } | null } | null } | null } };
+export type GetDeviceDetailQuery = { __typename?: 'Query', device: { __typename?: 'DeviceConfig', hostname: string, systemConfig?: { __typename?: 'SystemConfig', core: { __typename?: 'Core', disableDefaults: boolean, locale: { __typename?: 'Locale', defaultLocale: string, supportedLocales: Array<string>, timeZone: string }, network: { __typename?: 'Network', domain: string, services: { __typename?: 'NetworkServices', enableAvahi: boolean, enableNetworkManager: boolean, enableResolved: boolean } }, securityRules: { __typename?: 'SecurityRules', enable: boolean }, shells: { __typename?: 'Shells', fish: { __typename?: 'Fish', enable: boolean }, zsh: { __typename?: 'Zsh', enable: boolean } } }, desktop: { __typename?: 'Desktop', gamemode: { __typename?: 'Gamemode', enable: boolean }, wayland: { __typename?: 'Wayland', desktopManager: { __typename?: 'DesktopManager', gnome: { __typename?: 'Gnome', enable: boolean }, plasma6: { __typename?: 'Plasma6', enable: boolean } }, displayManager: { __typename?: 'DisplayManager', gdm: { __typename?: 'GDM', enable: boolean } }, windowManager: { __typename?: 'WindowManager', hyprland: { __typename?: 'Hyprland', enable: boolean }, sway: { __typename?: 'Sway', enable: boolean } } } }, server: { __typename?: 'Server', auth: { __typename?: 'Auth', freeipa: { __typename: 'FreeIPA', enable: boolean }, keycloak: { __typename: 'Keycloak', enable: boolean } }, cache: { __typename: 'Cache', enable: boolean }, databases: { __typename?: 'Databases', mysql: { __typename: 'Mysql', enable: boolean }, postgresql: { __typename: 'Postgresql', enable: boolean } }, git: { __typename?: 'GitServer', daemon: { __typename: 'GitDaemon', enable: boolean }, cgit: { __typename: 'CGit', enable: boolean } }, hosting: { __typename?: 'Hosting', website: { __typename?: 'Website', enable: boolean } }, hydra: { __typename: 'Hydra', enable: boolean }, minecraft: { __typename: 'Minecraft', enable: boolean }, nixConfigurator: { __typename: 'NixConfigurator', enable: boolean }, services: { __typename?: 'Services', fail2ban: { __typename: 'Fail2ban', enable: boolean }, headscale: { __typename: 'Headscale', enable: boolean }, web: { __typename?: 'Web', acme: { __typename?: 'Acme', enable: boolean }, nginx: { __typename?: 'Nginx', enable: boolean } } }, teamspeak: { __typename: 'Teamspeak', enable: boolean } }, utils: { __typename?: 'Utils', kdeconnect: { __typename?: 'KdeConnect', enable: boolean }, virtualisation: { __typename?: 'Virtualisation', docker: { __typename?: 'Docker', enable: boolean }, podman: { __typename?: 'Podman', enable: boolean }, libvirtd: { __typename?: 'Libvirtd', enable: boolean } } } } | null, homeConfig?: { __typename?: 'HomeConfig', desktop?: { __typename?: 'HomeDesktop', programs: { __typename?: 'HomePrograms', browsers?: { __typename?: 'HomeBrowsers', brave: { __typename?: 'HomeBrave', enable: boolean }, chromium: { __typename?: 'HomeChromium', enable: boolean }, firefox: { __typename?: 'HomeFirefox', enable: boolean } } | null, editors?: { __typename?: 'HomeEditors', vscode: { __typename?: 'HomeVSCode', enable: boolean } } | null, emulators?: { __typename?: 'HomeEmulators', alacritty?: { __typename?: 'HomeAlacritty', enable: boolean } | null, kitty?: { __typename?: 'HomeKitty', enable: boolean } | null, wezterm?: { __typename?: 'HomeWezterm', enable: boolean } | null } | null, games?: { __typename?: 'HomeGames', lutris: { __typename?: 'HomeLutris', enable: boolean }, minecraft: { __typename?: 'HomeMinecraft', enable: boolean } } | null, media?: { __typename?: 'HomeMedia', mpv: { __typename?: 'HomeMPV', enable: boolean } } | null, productivity?: { __typename?: 'HomeProductivity', proton: { __typename?: 'HomeProton', mail?: { __typename: 'HomeProtonMail', enable: boolean } | null, pass?: { __typename: 'HomeProtonPass', enable: boolean } | null, vpn?: { __typename: 'HomeProtonVPN', enable: boolean } | null }, zathura: { __typename?: 'HomeZathura', enable: boolean } } | null }, services: { __typename?: 'HomeDesktopServices', kdeconnect: { __typename?: 'HomeKdeConnect', enable: boolean }, mako: { __typename?: 'HomeMako', enable: boolean }, polkit_agent: { __typename?: 'HomeKdeConnect', enable: boolean } }, wayland?: { __typename?: 'HomeWayland', hyprland: { __typename?: 'HomeHyprland', enable: boolean, settings: { __typename?: 'HomeHyprlandSettings', mod: string }, plugins: { __typename?: 'HomeHyprlandPlugins', hyprsplit: { __typename?: 'HomeHyprSplit', enable: boolean, numberOfWorkspaces: number } } }, waybar: { __typename?: 'HomeWaybar', enable: boolean } } | null } | null, services?: { __typename?: 'HomeServices', media: { __typename?: 'HomeMediaServices', playerctl: { __typename?: 'HomePlayerctl', enable: boolean } }, system: { __typename?: 'HomeSystemServices', udiskie: { __typename?: 'HomeUdiskie', enable: boolean } } } | null, terminal?: { __typename?: 'HomeTerminal', shell?: { __typename?: 'HomeShell', fish: { __typename?: 'HomeFish', enable: boolean } } | null } | null } | null } };
 
-export type HomeDesktopConfigFragment = { __typename?: 'HomeDesktop', programs: { __typename?: 'HomePrograms', browsers?: { __typename?: 'HomeBrowsers', brave: { __typename?: 'HomeBrave', enable: boolean }, chromium: { __typename?: 'HomeChromium', enable: boolean }, firefox: { __typename?: 'HomeFirefox', enable: boolean } } | null, editors?: { __typename?: 'HomeEditors', vscode: { __typename?: 'HomeVSCode', enable: boolean } } | null, emulators?: { __typename?: 'HomeEmulators', alacritty?: { __typename?: 'HomeAlacritty', enable: boolean } | null, kitty?: { __typename?: 'HomeKitty', enable: boolean } | null, wezterm?: { __typename?: 'HomeWezterm', enable: boolean } | null } | null, games?: { __typename?: 'HomeGames', lutris: { __typename?: 'HomeLutris', enable: boolean }, minecraft: { __typename?: 'HomeMinecraft', enable: boolean } } | null, media?: { __typename?: 'HomeMedia', mpv: { __typename?: 'HomeMPV', enable: boolean } } | null, productivity?: { __typename?: 'HomeProductivity', zathura: { __typename?: 'HomeZathura', enable: boolean } } | null }, services: { __typename?: 'HomeDesktopServices', kdeconnect: { __typename?: 'HomeKdeConnect', enable: boolean }, mako: { __typename?: 'HomeMako', enable: boolean }, polkit_agent: { __typename?: 'HomeKdeConnect', enable: boolean } }, wayland?: { __typename?: 'HomeWayland', hyprland: { __typename?: 'HomeHyprland', enable: boolean, settings: { __typename?: 'HomeHyprlandSettings', mod: string }, plugins: { __typename?: 'HomeHyprlandPlugins', hyprsplit: { __typename?: 'HomeHyprSplit', enable: boolean, numberOfWorkspaces: number } } }, waybar: { __typename?: 'HomeWaybar', enable: boolean } } | null };
+export type HomeDesktopConfigFragment = { __typename?: 'HomeDesktop', programs: { __typename?: 'HomePrograms', browsers?: { __typename?: 'HomeBrowsers', brave: { __typename?: 'HomeBrave', enable: boolean }, chromium: { __typename?: 'HomeChromium', enable: boolean }, firefox: { __typename?: 'HomeFirefox', enable: boolean } } | null, editors?: { __typename?: 'HomeEditors', vscode: { __typename?: 'HomeVSCode', enable: boolean } } | null, emulators?: { __typename?: 'HomeEmulators', alacritty?: { __typename?: 'HomeAlacritty', enable: boolean } | null, kitty?: { __typename?: 'HomeKitty', enable: boolean } | null, wezterm?: { __typename?: 'HomeWezterm', enable: boolean } | null } | null, games?: { __typename?: 'HomeGames', lutris: { __typename?: 'HomeLutris', enable: boolean }, minecraft: { __typename?: 'HomeMinecraft', enable: boolean } } | null, media?: { __typename?: 'HomeMedia', mpv: { __typename?: 'HomeMPV', enable: boolean } } | null, productivity?: { __typename?: 'HomeProductivity', proton: { __typename?: 'HomeProton', mail?: { __typename: 'HomeProtonMail', enable: boolean } | null, pass?: { __typename: 'HomeProtonPass', enable: boolean } | null, vpn?: { __typename: 'HomeProtonVPN', enable: boolean } | null }, zathura: { __typename?: 'HomeZathura', enable: boolean } } | null }, services: { __typename?: 'HomeDesktopServices', kdeconnect: { __typename?: 'HomeKdeConnect', enable: boolean }, mako: { __typename?: 'HomeMako', enable: boolean }, polkit_agent: { __typename?: 'HomeKdeConnect', enable: boolean } }, wayland?: { __typename?: 'HomeWayland', hyprland: { __typename?: 'HomeHyprland', enable: boolean, settings: { __typename?: 'HomeHyprlandSettings', mod: string }, plugins: { __typename?: 'HomeHyprlandPlugins', hyprsplit: { __typename?: 'HomeHyprSplit', enable: boolean, numberOfWorkspaces: number } } }, waybar: { __typename?: 'HomeWaybar', enable: boolean } } | null };
 
 export type HomeServicesConfigFragment = { __typename?: 'HomeServices', media: { __typename?: 'HomeMediaServices', playerctl: { __typename?: 'HomePlayerctl', enable: boolean } }, system: { __typename?: 'HomeSystemServices', udiskie: { __typename?: 'HomeUdiskie', enable: boolean } } };
 
 export type HomeTerminalConfigFragment = { __typename?: 'HomeTerminal', shell?: { __typename?: 'HomeShell', fish: { __typename?: 'HomeFish', enable: boolean } } | null };
 
-export type CoreConfigFragment = { __typename?: 'Core', disableDefaults: boolean, locale: { __typename?: 'Locale', defaultLocale: string, supportedLocales: Array<string>, timeZone: string }, network: { __typename?: 'Network', domain: string, services: { __typename?: 'NetworkServices', enableAvahi: boolean, enableNetworkManager: boolean, enableResolved: boolean } }, securityRules: { __typename?: 'SecurityRules', enable: boolean }, shells: { __typename?: 'Shells', fish: { __typename?: 'Fish', enable: boolean }, zsh: { __typename?: 'Zsh', enable: boolean } }, storage: { __typename?: 'Storage', enablePersistence: boolean, otherDrives: Array<{ __typename?: 'Drive', name: string, encrypted: { __typename?: 'Encrypted', enable: boolean, path: string } }>, systemDrive: { __typename?: 'Drive', name: string, encrypted: { __typename?: 'Encrypted', enable: boolean, path: string } }, swapFile: { __typename?: 'SwapFile', enable: boolean, path: string, size: number } } };
+export type CoreConfigFragment = { __typename?: 'Core', disableDefaults: boolean, locale: { __typename?: 'Locale', defaultLocale: string, supportedLocales: Array<string>, timeZone: string }, network: { __typename?: 'Network', domain: string, services: { __typename?: 'NetworkServices', enableAvahi: boolean, enableNetworkManager: boolean, enableResolved: boolean } }, securityRules: { __typename?: 'SecurityRules', enable: boolean }, shells: { __typename?: 'Shells', fish: { __typename?: 'Fish', enable: boolean }, zsh: { __typename?: 'Zsh', enable: boolean } } };
 
 export type DesktopConfigFragment = { __typename?: 'Desktop', gamemode: { __typename?: 'Gamemode', enable: boolean }, wayland: { __typename?: 'Wayland', desktopManager: { __typename?: 'DesktopManager', gnome: { __typename?: 'Gnome', enable: boolean }, plasma6: { __typename?: 'Plasma6', enable: boolean } }, displayManager: { __typename?: 'DisplayManager', gdm: { __typename?: 'GDM', enable: boolean } }, windowManager: { __typename?: 'WindowManager', hyprland: { __typename?: 'Hyprland', enable: boolean }, sway: { __typename?: 'Sway', enable: boolean } } } };
 
-export type ServerConfigFragment = { __typename?: 'Server', auth: { __typename?: 'Auth', freeipa: { __typename: 'FreeIPA', enable: boolean }, keycloak: { __typename: 'Keycloak', enable: boolean } }, cache: { __typename: 'Cache', enable: boolean }, databases: { __typename?: 'Databases', mysql: { __typename: 'Mysql', enable: boolean }, postgresql: { __typename: 'Postgresql', enable: boolean } }, git: { __typename?: 'GitServer', daemon: { __typename: 'GitDaemon', enable: boolean }, cgit: { __typename: 'CGit', enable: boolean } }, homelab: { __typename?: 'Homelab', blocky: { __typename?: 'Blocky', enable: boolean }, homeassistant: { __typename?: 'Homeassistant', enable: boolean }, mosquitto: { __typename?: 'Mosquitto', enable: boolean }, zigbee2mqtt: { __typename?: 'Zigbee2Mqtt', enable: boolean } }, hosting: { __typename?: 'Hosting', website: { __typename?: 'Website', enable: boolean } }, hydra: { __typename: 'Hydra', enable: boolean }, minecraft: { __typename: 'Minecraft', enable: boolean }, services: { __typename?: 'Services', fail2ban: { __typename: 'Fail2ban', enable: boolean }, headscale: { __typename: 'Headscale', enable: boolean }, web: { __typename?: 'Web', acme: { __typename?: 'Acme', enable: boolean }, nginx: { __typename?: 'Nginx', enable: boolean } } }, teamspeak: { __typename: 'Teamspeak', enable: boolean } };
+export type ServerConfigFragment = { __typename?: 'Server', auth: { __typename?: 'Auth', freeipa: { __typename: 'FreeIPA', enable: boolean }, keycloak: { __typename: 'Keycloak', enable: boolean } }, cache: { __typename: 'Cache', enable: boolean }, databases: { __typename?: 'Databases', mysql: { __typename: 'Mysql', enable: boolean }, postgresql: { __typename: 'Postgresql', enable: boolean } }, git: { __typename?: 'GitServer', daemon: { __typename: 'GitDaemon', enable: boolean }, cgit: { __typename: 'CGit', enable: boolean } }, hosting: { __typename?: 'Hosting', website: { __typename?: 'Website', enable: boolean } }, hydra: { __typename: 'Hydra', enable: boolean }, minecraft: { __typename: 'Minecraft', enable: boolean }, nixConfigurator: { __typename: 'NixConfigurator', enable: boolean }, services: { __typename?: 'Services', fail2ban: { __typename: 'Fail2ban', enable: boolean }, headscale: { __typename: 'Headscale', enable: boolean }, web: { __typename?: 'Web', acme: { __typename?: 'Acme', enable: boolean }, nginx: { __typename?: 'Nginx', enable: boolean } } }, teamspeak: { __typename: 'Teamspeak', enable: boolean } };
 
 export type UtilsConfigFragment = { __typename?: 'Utils', kdeconnect: { __typename?: 'KdeConnect', enable: boolean }, virtualisation: { __typename?: 'Virtualisation', docker: { __typename?: 'Docker', enable: boolean }, podman: { __typename?: 'Podman', enable: boolean }, libvirtd: { __typename?: 'Libvirtd', enable: boolean } } };
 
@@ -1105,6 +1046,20 @@ export const HomeDesktopConfigFragmentDoc = gql`
       }
     }
     productivity {
+      proton {
+        mail {
+          enable
+          __typename
+        }
+        pass {
+          enable
+          __typename
+        }
+        vpn {
+          enable
+          __typename
+        }
+      }
       zathura {
         enable
       }
@@ -1190,28 +1145,6 @@ export const CoreConfigFragmentDoc = gql`
       enable
     }
   }
-  storage {
-    otherDrives {
-      name
-      encrypted {
-        enable
-        path
-      }
-    }
-    systemDrive {
-      name
-      encrypted {
-        enable
-        path
-      }
-    }
-    swapFile {
-      enable
-      path
-      size
-    }
-    enablePersistence
-  }
 }
     `;
 export const DesktopConfigFragmentDoc = gql`
@@ -1280,20 +1213,6 @@ export const ServerConfigFragmentDoc = gql`
       __typename
     }
   }
-  homelab {
-    blocky {
-      enable
-    }
-    homeassistant {
-      enable
-    }
-    mosquitto {
-      enable
-    }
-    zigbee2mqtt {
-      enable
-    }
-  }
   hosting {
     website {
       enable
@@ -1304,6 +1223,10 @@ export const ServerConfigFragmentDoc = gql`
     __typename
   }
   minecraft {
+    enable
+    __typename
+  }
+  nixConfigurator {
     enable
     __typename
   }

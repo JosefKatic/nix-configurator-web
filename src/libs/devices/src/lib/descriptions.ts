@@ -424,7 +424,7 @@ export const supportedLocales = [
 ].sort();
 
 export const supportedLocalesWithSuffix = supportedLocales.map(
-  (locale) => `${locale}/UTF-8`,
+  (locale) => `${locale}/UTF-8`
 );
 
 export const DESCRIPTIONS = [
@@ -909,6 +909,17 @@ export const DESCRIPTIONS = [
                 controlType: ControlType.checkbox,
               },
             ],
+          },
+        ],
+      },
+      {
+        key: 'nixConfigurator',
+        label: 'Nix Configurator',
+        children: [
+          {
+            key: 'enable',
+            label: 'Enables or disables the Nix Configurator',
+            controlType: ControlType.checkbox,
           },
         ],
       },
