@@ -7,11 +7,6 @@ export const DESCRIPTIONS_HOME = [
     label: 'Desktop',
     children: [
       {
-        key: 'enable',
-        label: 'Enable desktop environment',
-        controlType: ControlType.checkbox,
-      },
-      {
         key: 'programs',
         label: 'Programs that can be installed on this computer',
         children: [
@@ -240,7 +235,7 @@ export const DESCRIPTIONS_HOME = [
   },
   {
     key: 'services',
-    label: 'Services that can be enabled on this computer',
+    label: 'Services',
     children: [
       {
         key: 'media',
@@ -280,7 +275,7 @@ export const DESCRIPTIONS_HOME = [
   },
   {
     key: 'terminal',
-    label: 'Terminal settings and applications',
+    label: 'Terminal',
     children: [
       {
         key: 'shell',
