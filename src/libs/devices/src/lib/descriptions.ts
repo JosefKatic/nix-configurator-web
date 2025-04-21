@@ -576,38 +576,6 @@ export const DESCRIPTIONS = [
           },
         ],
       },
-      {
-        key: 'storage',
-        label: 'Storage',
-        children: [
-          {
-            key: 'enablePersistence',
-            label: 'Enables or disables persistence',
-            controlType: ControlType.checkbox,
-          },
-          {
-            key: 'swapFile',
-            label: 'Swap file',
-            children: [
-              {
-                key: 'enable',
-                label: 'Enables or disables the swap file',
-                controlType: ControlType.checkbox,
-              },
-              {
-                key: 'path',
-                label: 'Path to the swap file',
-                controlType: ControlType.text,
-              },
-              {
-                key: 'size',
-                label: 'Size of the swap file',
-                controlType: 'number',
-              },
-            ],
-          },
-        ],
-      },
     ],
   },
   {
