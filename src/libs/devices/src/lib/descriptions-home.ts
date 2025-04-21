@@ -133,7 +133,7 @@ export const DESCRIPTIONS_HOME = [
                         label: 'Enable Proton Mail',
                         controlType: ControlType.checkbox,
                       },
-                    ]
+                    ],
                   },
                   {
                     key: 'pass',
@@ -144,7 +144,7 @@ export const DESCRIPTIONS_HOME = [
                         label: 'Enable Proton Pass',
                         controlType: ControlType.checkbox,
                       },
-                    ]
+                    ],
                   },
                   {
                     key: 'vpn',
@@ -155,10 +155,10 @@ export const DESCRIPTIONS_HOME = [
                         label: 'Enable Proton VPN',
                         controlType: ControlType.checkbox,
                       },
-                    ]
+                    ],
                   },
-                ]
-              }
+                ],
+              },
               {
                 key: 'zathura',
                 label: 'Zathura PDF reader',
