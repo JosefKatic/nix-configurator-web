@@ -890,8 +890,8 @@ export type Utils = {
 };
 
 export type UtilsInput = {
-  kdeconnect: KdeConnectInput;
-  virtualisation: VirtualisationInput;
+  kdeconnect?: InputMaybe<KdeConnectInput>;
+  virtualisation?: InputMaybe<VirtualisationInput>;
 };
 
 export type Virtualisation = {
@@ -902,9 +902,9 @@ export type Virtualisation = {
 };
 
 export type VirtualisationInput = {
-  docker: DockerInput;
-  libvirtd: LibvirtdInput;
-  podman: PodmanInput;
+  docker?: InputMaybe<DockerInput>;
+  libvirtd?: InputMaybe<LibvirtdInput>;
+  podman?: InputMaybe<PodmanInput>;
 };
 
 export type Wayland = {
