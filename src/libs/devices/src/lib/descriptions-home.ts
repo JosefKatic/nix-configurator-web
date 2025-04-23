@@ -1,6 +1,8 @@
 import { ControlType } from '@joka00/libs/data-access';
 import { last } from 'rxjs';
 
+const BROWSERS = ['brave', 'chromium', 'firefox', 'zen'];
+
 export const DESCRIPTIONS_HOME = [
   {
     key: 'desktop',
@@ -47,6 +49,12 @@ export const DESCRIPTIONS_HOME = [
                   },
                 ],
               },
+              {
+                key: 'default',
+                label: 'Default browser',
+                controlType: ControlType.select,
+                options: BROWSERS,
+              },
             ],
           },
           {
@@ -54,7 +62,7 @@ export const DESCRIPTIONS_HOME = [
             label: 'Text editors',
             children: [
               {
-                key: 'code',
+                key: 'vscode',
                 label: 'Visual Studio Code',
                 children: [
                   {
